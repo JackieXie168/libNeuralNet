@@ -1,15 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   S I X   H U M P   C A M E L   B A C K   F U N C T I O N   C L A S S                                        */
 /*                                                                                                              */
-/*   Alicia & Iorga                                                                                             */
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: a_kalms@hotmail.com, iorga1@mixmail.com                                                            */
+/*   Roberto Lopez                                                                                              */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -40,13 +38,25 @@ SixHumpCamelBackFunction::~SixHumpCamelBackFunction(void)
 
 // METHODS
 
-// double calculate_evaluation(void) const method
+// double calculate_performance(void) const method
 
-double SixHumpCamelBackFunction::calculate_evaluation(void) const
+double SixHumpCamelBackFunction::calculate_performance(void) const
 {
    const Vector<double> argument = neural_network_pointer->get_independent_parameters_pointer()->get_parameters();
       
    const double performance 
+   = pow(argument[0],2)*(4.0 - 2.1*pow(argument[0],2)+pow(argument[0],4.0)/3.0)
+   + argument[0]*argument[1]+pow(argument[1],2)*(4*pow(argument[1],2)-4);
+
+   return(performance);
+}
+
+
+// double calculate_performance(const Vector<double>&) const method
+
+double SixHumpCamelBackFunction::calculate_performance(const Vector<double>& argument) const
+{
+   const double performance
    = pow(argument[0],2)*(4.0 - 2.1*pow(argument[0],2)+pow(argument[0],4.0)/3.0)
    + argument[0]*argument[1]+pow(argument[1],2)*(4*pow(argument[1],2)-4);
 
@@ -93,7 +103,7 @@ Matrix<double> SixHumpCamelBackFunction::calculate_Hessian(void) const
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

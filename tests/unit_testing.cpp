@@ -1,23 +1,17 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   U N I T   T E S T I N G   C L A S S                                                                        */
 /*                                                                                                              */
 /*   Roberto Lopez                                                                                              */ 
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.edu                                                                               */ 
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<sstream>
-#include <time.h>
+// Unit testing includes
 
 #include"unit_testing.h"
 
@@ -51,41 +45,41 @@ UnitTesting::~UnitTesting(void)
 
 // METHODS
 
-// unsigned int get_tests_count(void) const method
+// unsigned get_tests_count(void) const method
 
-/// This method returns the number of tests which have been performed by the test case. 
+/// Returns the number of tests which have been performed by the test case. 
 
-unsigned int UnitTesting::get_tests_count(void) const
+unsigned UnitTesting::get_tests_count(void) const
 {
    return(tests_count);
 }
 
 
-// unsigned int get_tests_passed_count(void) const method
+// unsigned get_tests_passed_count(void) const method
 
-/// This method returns the number of tests which have passed the test case. 
+/// Returns the number of tests which have passed the test case. 
 
-unsigned int UnitTesting::get_tests_passed_count(void) const
+unsigned UnitTesting::get_tests_passed_count(void) const
 {
    return(tests_passed_count);
 }
 
 
-// unsigned int get_tests_failed_count(void) const method
+// unsigned get_tests_failed_count(void) const method
 
-/// This method returns the number of tests which have failed the test case. 
+/// Returns the number of tests which have failed the test case. 
 
-unsigned int UnitTesting::get_tests_failed_count(void) const
+unsigned UnitTesting::get_tests_failed_count(void) const
 {
    return(tests_failed_count);
 }
 
 
-// unsigned int get_random_tests_number(void) const method
+// unsigned get_random_tests_number(void) const method
 
-/// This method returns the number of iterations for loops of random tests. 
+/// Returns the number of iterations for loops of random tests. 
 
-unsigned int UnitTesting::get_random_tests_number(void) const
+unsigned UnitTesting::get_random_tests_number(void) const
 {
    return(random_tests_number);
 }
@@ -101,7 +95,7 @@ bool UnitTesting::get_numerical_differentiation_tests(void) const
 
 // std::string& get_message(void) method
 
-/// This method returns a reference to the test case information message. 
+/// Returns a reference to the test case information message. 
 
 std::string& UnitTesting::get_message(void) 
 {
@@ -111,7 +105,7 @@ std::string& UnitTesting::get_message(void)
 
 // const bool& get_display(void) const method
 
-/// This method returns the display messages to the screen value of this object. 
+/// Returns the display messages to the screen value of this object. 
 
 const bool& UnitTesting::get_display(void) const
 {
@@ -119,34 +113,34 @@ const bool& UnitTesting::get_display(void) const
 }
 
 
-// void set_tests_count(unsigned int) method
+// void set_tests_count(unsigned) method
 
-/// This method sets a new value for the number of tests performed by the test case. 
+/// Sets a new value for the number of tests performed by the test case. 
 /// @param new_tests_count Number of tests performed. 
 
-void UnitTesting::set_tests_count(const unsigned int& new_tests_count)
+void UnitTesting::set_tests_count(const unsigned& new_tests_count)
 {
    tests_count = new_tests_count;
 }
 
 
-// void set_tests_passed_count(unsigned int) method
+// void set_tests_passed_count(unsigned) method
 
-/// This method sets a new value for the number of tests which have passed the test case. 
+/// Sets a new value for the number of tests which have passed the test case. 
 /// @param new_tests_passed_count Number of tests passed. 
 
-void UnitTesting::set_tests_passed_count(const unsigned int& new_tests_passed_count)
+void UnitTesting::set_tests_passed_count(const unsigned& new_tests_passed_count)
 {
    tests_passed_count = new_tests_passed_count;
 }
 
 
-// void set_tests_failed_count(unsigned int) method
+// void set_tests_failed_count(unsigned) method
 
-/// This method sets a new value for the number of tests which have failed the test case. 
+/// Sets a new value for the number of tests which have failed the test case. 
 /// @param new_tests_failed_count Number of tests failed. 
 
-void UnitTesting::set_tests_failed_count(const unsigned int& new_tests_failed_count)
+void UnitTesting::set_tests_failed_count(const unsigned& new_tests_failed_count)
 {
    tests_failed_count = new_tests_failed_count;
 }
@@ -160,12 +154,12 @@ void UnitTesting::set_numerical_differentiation_tests(const bool& new_numerical_
 }
 
 
-// void set_random_tests_number(unsigned int) method
+// void set_random_tests_number(unsigned) method
 
-/// This method sets a new value for the number of iterations in loops of random tests. 
+/// Sets a new value for the number of iterations in loops of random tests. 
 /// @param new_random_tests_number Number of random tests in each loop. 
 
-void UnitTesting::set_random_tests_number(const unsigned int& new_random_tests_number)
+void UnitTesting::set_random_tests_number(const unsigned& new_random_tests_number)
 {
    random_tests_number = new_random_tests_number;
 }
@@ -173,7 +167,7 @@ void UnitTesting::set_random_tests_number(const unsigned int& new_random_tests_n
 
 // void set_message(const std::string&) method
 
-/// This method sets a new test case information message. 
+/// Sets a new test case information message. 
 /// @param new_message Information message. 
 
 void UnitTesting::set_message(const std::string& new_message)
@@ -184,7 +178,7 @@ void UnitTesting::set_message(const std::string& new_message)
 
 // void set_display(const bool&) method
 
-/// This method sets a new display value to this object.
+/// Sets a new display value to this object.
 /// @param new_display Display value. 
 
 void UnitTesting::set_display(const bool& new_display)
@@ -195,7 +189,7 @@ void UnitTesting::set_display(const bool& new_display)
 
 // void assert_true(bool, std::string) method
 
-/// This method checks that a condition is true.
+/// Checks that a condition is true.
 /// It increases the number of tests by one.
 /// It increases the number of tests passed by one if the condition is true.
 /// It increases the number of tests failed by one if the condition is false.
@@ -223,7 +217,7 @@ void UnitTesting::assert_true(const bool& condition, const std::string& error_me
 
 // void assert_false(bool) method
 
-/// This method checks that a condition is false.
+/// Checks that a condition is false.
 /// It increases the number of tests by one.
 /// It increases the number of tests passed by one if the condition is false.
 /// It increases the number of tests failed by one if the condition is true.
@@ -251,7 +245,7 @@ void UnitTesting::assert_false(const bool& condition, const std::string& error_m
 
 // void print_results(void) method
 
-/// This method prints the test case results to the screen: 
+/// Prints the test case results to the screen: 
 /// <ul>
 /// <li> Information message.
 /// <li> Number of tests performed.
@@ -282,7 +276,7 @@ void UnitTesting::print_results(void)
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the terms of the GNU Lesser General Public

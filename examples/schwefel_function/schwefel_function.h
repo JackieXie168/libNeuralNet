@@ -1,15 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   S C H W E F E L   F U N C T I O N   C L A S S   H E A D E R                                                */
 /*                                                                                                              */
 /*   Roberto Lopez                                                                                              */
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.edu                                                                               */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -47,9 +45,9 @@ public:
 
    // Objective methods
 
-   double calculate_evaluation(void) const;
+   double calculate_performance(void) const;
 
-   double calculate_evaluation(const Vector<double>&) const;
+   double calculate_performance(const Vector<double>&) const;
 
    // Objective function gradient vector methods
 
@@ -68,7 +66,7 @@ public:
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

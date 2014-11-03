@@ -1,15 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   C A R   P R O B L E M   C L A S S                                                                          */
 /*                                                                                                              */
 /*   Roberto Lopez                                                                                              */
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.es                                                                                */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -142,10 +140,14 @@ Vector<double> Car::calculate_final_solutions(const NeuralNetwork& neural_networ
                 << "Vector<double> calculate_final_solutions(const NeuralNetwork&) const method.\n"               
                 << "Unknown solution method.\n";
 
-	 throw std::logic_error(buffer.str());
+         throw std::logic_error(buffer.str());
       }
       break;
    }
+
+   Vector<double> final_solutions;
+
+   return(final_solutions);
 }
 
 
@@ -153,7 +155,7 @@ Vector<double> Car::calculate_final_solutions(const NeuralNetwork& neural_networ
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

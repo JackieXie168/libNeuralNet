@@ -1,15 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   A I R C R A F T   L A N D I N G   S O L U T I O N   E R R O R   C L A S S                                  */
 /*                                                                                                              */
-/*   Roberto Lopez and Kevin Lau                                                                                */ 
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.es, kevin.lau@imperial.ac.uk                                                      */ 
+/*   Roberto Lopez                                                                                              */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -62,7 +60,7 @@ AircraftLandingSolutionError::AircraftLandingSolutionError(NeuralNetwork* new_ne
 
 // XML CONSTRUCTOR
 
-AircraftLandingSolutionError::AircraftLandingSolutionError(TiXmlElement* solutions_error_element) 
+AircraftLandingSolutionError::AircraftLandingSolutionError(const tinyxml2::XMLDocument& solutions_error_element)
  : SolutionsError(solutions_error_element)
 {
 }
@@ -141,9 +139,9 @@ Matrix<double> AircraftLandingSolutionError::calculate_target_dependent_variable
 }
 
 
-// double calculate_evaluation(void) const method
+// double calculate_performance(void) const method
 
-double AircraftLandingSolutionError::calculate_evaluation(void) const
+double AircraftLandingSolutionError::calculate_performance(void) const
 {
    // Control sentence
 
@@ -172,7 +170,7 @@ double AircraftLandingSolutionError::calculate_evaluation(void) const
          std::ostringstream buffer;
 
          buffer << "OpenNN Exception: AircraftLandingSolutionError class\n"
-                << "double calculate_evaluation(void) const method.\n"               
+                << "double calculate_performance(void) const method.\n"               
                 << "Unknown solutions error method.\n";
 
 	     throw std::logic_error(buffer.str());
@@ -182,9 +180,9 @@ double AircraftLandingSolutionError::calculate_evaluation(void) const
 }
 
 
-// double calculate_evaluation(const Vector<double>&) const method
+// double calculate_performance(const Vector<double>&) const method
 
-double AircraftLandingSolutionError::calculate_evaluation(const Vector<double>& parameters) const   
+double AircraftLandingSolutionError::calculate_performance(const Vector<double>& parameters) const   
 {
    // Control sentence
 
@@ -203,7 +201,7 @@ double AircraftLandingSolutionError::calculate_evaluation(const Vector<double>& 
    solutions_error_copy.set_neural_network_pointer(&neural_network_copy);
    solutions_error_copy.set_mathematical_model_pointer(mathematical_model_pointer);
 
-   return(solutions_error_copy.calculate_evaluation());
+   return(solutions_error_copy.calculate_performance());
 }
 
 
@@ -211,7 +209,7 @@ double AircraftLandingSolutionError::calculate_evaluation(const Vector<double>& 
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

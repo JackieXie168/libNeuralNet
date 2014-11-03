@@ -1,16 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   E A S O M   F U N C T I O N   C L A S S                                                                    */
 /*                                                                                                              */
-/*   Gilles Cadose                                                                                              */
-/*   Carlos Vargas de la Fuente                                                                                 */
-/*   Hebert Sotelo Aedo                                                                                         */
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
+/*   Roberto Lopez                                                                                              */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -49,9 +46,9 @@ EasomFunction::~EasomFunction(void)
 
 // METHODS
 
-// double calculate_evaluation(void) const method
+// double calculate_performance(void) const method
 
-double EasomFunction::calculate_evaluation(void) const
+double EasomFunction::calculate_performance(void) const
 {
    Vector<double> argument = neural_network_pointer->get_independent_parameters_pointer()->get_parameters();
          
@@ -60,6 +57,18 @@ double EasomFunction::calculate_evaluation(void) const
    double objective = -cos(argument[0])*cos(argument[1])*a;
     
    return(objective);
+}
+
+
+// double calculate_performance(const Vector<double>&) const method
+
+double EasomFunction::calculate_performance(const Vector<double>& parameters) const
+{
+   const double a = exp(-(pow((parameters[0]- PI), 2) + pow((parameters[1] - PI), 2)));
+
+   const double performance = -cos(parameters[0])*cos(parameters[1])*a;
+
+   return(performance);
 }
 
 
@@ -135,7 +144,7 @@ Matrix<double> EasomFunction::calculate_inverse_Hessian(void) const
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

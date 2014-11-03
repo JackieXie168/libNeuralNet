@@ -1,15 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                        */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   D E   J O N G   F U N C T I O N   C L A S S                                                                */
 /*                                                                                                              */
 /*   Roberto Lopez                                                                                              */
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.edu                                                                               */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -56,9 +54,9 @@ DeJongFunction::~DeJongFunction(void)
 
 // METHODS
 
-// double calculate_evaluation(void) const method
+// double calculate_performance(void) const method
 
-double DeJongFunction::calculate_evaluation(void) const
+double DeJongFunction::calculate_performance(void) const
 {
    IndependentParameters* independent_parameters_pointer = neural_network_pointer->get_independent_parameters_pointer();
 
@@ -68,9 +66,9 @@ double DeJongFunction::calculate_evaluation(void) const
 }
 
 
-// double calculate_evaluation(const Vector<double>&) const method
+// double calculate_performance(const Vector<double>&) const method
 
-double DeJongFunction::calculate_evaluation(const Vector<double>& parameters) const
+double DeJongFunction::calculate_performance(const Vector<double>& parameters) const
 {
    NeuralNetwork neural_network_copy(*neural_network_pointer);
 
@@ -80,7 +78,7 @@ double DeJongFunction::calculate_evaluation(const Vector<double>& parameters) co
 
    de_Jong_function_copy.set_neural_network_pointer(&neural_network_copy);
 
-   return(de_Jong_function_copy.calculate_evaluation());
+   return(de_Jong_function_copy.calculate_performance());
 }
 
 
@@ -102,7 +100,7 @@ Matrix<double> DeJongFunction::calculate_Hessian(void) const
 {
    IndependentParameters* independent_parameters_pointer = neural_network_pointer->get_independent_parameters_pointer();
 
-   const unsigned int parameters_number = independent_parameters_pointer->count_parameters_number();
+   const unsigned int parameters_number = independent_parameters_pointer->get_parameters_number();
 
    Matrix<double> Hessian(parameters_number, parameters_number, 0.0);
 
@@ -118,7 +116,7 @@ Matrix<double> DeJongFunction::calculate_inverse_Hessian(void) const
 {
    IndependentParameters* independent_parameters_pointer = neural_network_pointer->get_independent_parameters_pointer();
 
-   const unsigned int parameters_number = independent_parameters_pointer->count_parameters_number();
+   const unsigned int parameters_number = independent_parameters_pointer->get_parameters_number();
 
    Matrix<double> inverse_Hessian(parameters_number, parameters_number, 0.0);
 
@@ -131,7 +129,7 @@ Matrix<double> DeJongFunction::calculate_inverse_Hessian(void) const
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

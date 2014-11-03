@@ -1,15 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   P R E C I P I T A T E   D I S S O L U T I O N   C L A S S                                                  */
 /*                                                                                                              */
-/*   Roberto Lopez                                                                                              */ 
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.es                                                                                */ 
+/*   Roberto Lopez                                                                                              */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -219,9 +217,9 @@ Matrix<double> PrecipitateDissolution::calculate_dependent_variables(const Neura
 }
 
 
-// double calculate_evaluation(void) const method
+// double calculate_performance(void) const method
 /*
-double PrecipitateDissolution::calculate_evaluation(void) const
+double PrecipitateDissolution::calculate_performance(void) const
 {
    Vector<double> normalized_time_data = calculate_normalized_time_data();
    Vector<double> volumetric_fraction_data = calculate_volumetric_fraction_data();
@@ -536,7 +534,7 @@ void PrecipitateDissolution::save_inverse_Vickers_hardness_test(const std::strin
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

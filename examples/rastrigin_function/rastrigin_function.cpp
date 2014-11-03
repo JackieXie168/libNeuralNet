@@ -1,15 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   R A S T R I G I N   F U N C T I O N   C L A S S                                                            */
 /*                                                                                                              */
 /*   Roberto Lopez                                                                                              */
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.edu                                                                               */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -45,9 +43,9 @@ RastriginFunction::~RastriginFunction(void)
 
 // METHODS
 
-// double calculate_evaluation(void) const method
+// double calculate_performance(void) const method
 
-double RastriginFunction::calculate_evaluation(void) const
+double RastriginFunction::calculate_performance(void) const
 {
    const double pi = 3.1415927;
 
@@ -128,7 +126,7 @@ Matrix<double> RastriginFunction::calculate_inverse_Hessian(void) const
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

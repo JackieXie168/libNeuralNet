@@ -1,3 +1,3 @@
 OpenNN: Open Neural Networks Library
-Version 0.9
+Version 1.0
 

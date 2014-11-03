@@ -1,15 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
-/*   OpenNN: Open Neural Networks Library                                                          */
-/*   www.opennn.cimne.com                                                                                        */
+/*   OpenNN: Open Neural Networks Library                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   S C H W E F E L   F U N C T I O N   C L A S S                                                              */
 /*                                                                                                              */
 /*   Roberto Lopez                                                                                              */
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.edu                                                                               */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -44,11 +42,11 @@ SchwefelFunction::~SchwefelFunction(void)
 // METHODS
 
 
-// double calculate_evaluation(void) const method
+// double calculate_performance(void) const method
 
-double SchwefelFunction::calculate_evaluation(void) const
+double SchwefelFunction::calculate_performance(void) const
 {
-   const unsigned int variables_number = neural_network_pointer->get_independent_parameters_pointer()->count_parameters_number();
+   const unsigned variables_number = neural_network_pointer->get_independent_parameters_pointer()->get_parameters_number();
    const Vector<double> argument = neural_network_pointer->get_independent_parameters_pointer()->get_parameters();
 
    double objective = 0.0;
@@ -62,9 +60,9 @@ double SchwefelFunction::calculate_evaluation(void) const
 }
 
 
-// double calculate_evaluation(const Vector<double>&) const method
+// double calculate_performance(const Vector<double>&) const method
 
-double SchwefelFunction::calculate_evaluation(const Vector<double>& parameters) const
+double SchwefelFunction::calculate_performance(const Vector<double>& parameters) const
 {
    NeuralNetwork neural_network_copy(*neural_network_pointer);
 
@@ -74,7 +72,7 @@ double SchwefelFunction::calculate_evaluation(const Vector<double>& parameters) 
 
    Schwefel_function_copy.set_neural_network_pointer(&neural_network_copy);
 
-   return(Schwefel_function_copy.calculate_evaluation());
+   return(Schwefel_function_copy.calculate_performance());
 }
 
 
@@ -82,7 +80,7 @@ double SchwefelFunction::calculate_evaluation(const Vector<double>& parameters) 
 
 Vector<double> SchwefelFunction::calculate_gradient(void) const
 {
-   const unsigned int variables_number = neural_network_pointer->get_independent_parameters_pointer()->count_parameters_number();
+   const unsigned int variables_number = neural_network_pointer->get_independent_parameters_pointer()->get_parameters_number();
    const Vector<double> argument = neural_network_pointer->get_independent_parameters_pointer()->get_parameters();
 
    Vector<double> objective_gradient(variables_number);
@@ -100,7 +98,7 @@ Vector<double> SchwefelFunction::calculate_gradient(void) const
 
 Matrix<double> SchwefelFunction::calculate_Hessian(void) const
 {
-   const unsigned int variables_number = neural_network_pointer->get_independent_parameters_pointer()->count_parameters_number();
+   const unsigned int variables_number = neural_network_pointer->get_independent_parameters_pointer()->get_parameters_number();
    const Vector<double> argument = neural_network_pointer->get_independent_parameters_pointer()->get_parameters();
 
    Matrix<double> hessian(variables_number, variables_number);
@@ -130,7 +128,7 @@ Matrix<double> SchwefelFunction::calculate_Hessian(void) const
 
 Matrix<double> SchwefelFunction::calculate_inverse_Hessian(void) const
 {
-   const unsigned int variables_number = neural_network_pointer->get_independent_parameters_pointer()->count_parameters_number();
+   const unsigned int variables_number = neural_network_pointer->get_independent_parameters_pointer()->get_parameters_number();
    Vector<double> argument = neural_network_pointer->get_independent_parameters_pointer()->get_parameters();
 
    Matrix<double> inverse_Hessian(variables_number, variables_number);
@@ -159,7 +157,7 @@ Matrix<double> SchwefelFunction::calculate_inverse_Hessian(void) const
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

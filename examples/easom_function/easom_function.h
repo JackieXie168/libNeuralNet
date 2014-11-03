@@ -1,17 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   E A S O M   F U N C T I O N   C L A S S   H E A D E R                                                      */
 /*                                                                                                              */
-/*   Gilles Cadose                                                                                              */
-/*   Carlos Vargas de la Fuente                                                                                 */
-/*   Hebert Sotelo Aedo                                                                                         */
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.edu                                                                               */
+/*   Roberto Lopez                                                                                              */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -46,7 +42,7 @@ public:
 
    // Objective methods
 
-   double calculate_evaluation(void) const;
+   double calculate_performance(void) const;
 
    // Objective function gradient methods
 
@@ -58,6 +54,8 @@ public:
 
    Matrix<double> calculate_inverse_Hessian(void) const;
 
+   double calculate_performance(const Vector<double>&) const;
+
 };
 
 }
@@ -66,7 +64,7 @@ public:
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

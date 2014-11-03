@@ -1,15 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   A I R C R A F T   L A N D I N G   S O L U T I O N   E R R O R   C L A S S   H E A D E R                    */
 /*                                                                                                              */
-/*   Roberto Lopez and Kevin Lau                                                                                */ 
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.es, kevin.lau@imperial.ac.uk                                                      */ 
+/*   Roberto Lopez                                                                                              */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -44,7 +42,7 @@ public:
 
    // XML CONSTRUCTOR
 
-   explicit AircraftLandingSolutionError(TiXmlElement*);
+   explicit AircraftLandingSolutionError(const tinyxml2::XMLDocument&);
 
    // COPY CONSTRUCTOR
 
@@ -66,8 +64,8 @@ public:
 
    Matrix<double> calculate_target_dependent_variables(const Matrix<double>&) const;
 
-   double calculate_evaluation(void) const;   
-   double calculate_evaluation(const Vector<double>&) const;   
+   double calculate_performance(void) const;   
+   double calculate_performance(const Vector<double>&) const;   
 
 };
 
@@ -76,7 +74,7 @@ public:
 #endif
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

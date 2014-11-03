@@ -1,15 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   C A R   N E U R O C O M P U T I N G   C L A S S                                                            */
 /*                                                                                                              */
 /*   Roberto Lopez                                                                                              */
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.es                                                                                */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -156,7 +154,7 @@ Vector<double> CarNeurocomputing::calculate_final_solutions(const NeuralNetwork&
       throw std::logic_error(buffer.str());
    }
 
-   const unsigned int independent_parameters_number = independent_parameters_pointer->count_parameters_number();
+   const unsigned independent_parameters_number = independent_parameters_pointer->count_parameters_number();
 
    if(independent_parameters_number != 1)
    {
@@ -195,17 +193,21 @@ Vector<double> CarNeurocomputing::calculate_final_solutions(const NeuralNetwork&
                 << "Vector<double> calculate_final_solutions(const NeuralNetwork&) const method.\n"               
                 << "Unknown solution method.\n";
 
-	 throw std::logic_error(buffer.str());
+         throw std::logic_error(buffer.str());
+
       }
       break;
    }
+
+   Vector<double> final_solutions;
+   return(final_solutions);
 }
 
 }
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public

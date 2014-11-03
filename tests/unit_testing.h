@@ -1,26 +1,33 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
-/*   OpenNN: Open Neural Networks Library                                                                      */
-/*   www.opennn.cimne.com                                                                                       */
+/*   OpenNN: Open Neural Networks Library                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   U N I T   T E S T I N G   C L A S S   H E A D E R                                                          */
 /*                                                                                                              */
 /*   Roberto Lopez                                                                                              */ 
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.edu                                                                               */ 
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
 #ifndef __UNITTESTING_H__
 #define __UNITTESTING_H__
 
+// System includes
+
+#include <cmath>
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <time.h>
+
 // OpenNN includes
 
-#include "../source/utilities/vector.h"
-#include "../source/utilities/matrix.h"
-
+#include "../source/opennn.h"
 
 class UnitTesting
 {
@@ -39,12 +46,12 @@ public:
 
    // Get methods
 
-   unsigned int get_tests_count(void) const;
-   unsigned int get_tests_passed_count(void) const;
-   unsigned int get_tests_failed_count(void) const;
+   unsigned get_tests_count(void) const;
+   unsigned get_tests_passed_count(void) const;
+   unsigned get_tests_failed_count(void) const;
 
    bool get_numerical_differentiation_tests(void) const;
-   unsigned int get_random_tests_number(void) const;
+   unsigned get_random_tests_number(void) const;
 
    std::string& get_message(void);
 
@@ -52,12 +59,12 @@ public:
 
    // Set methods
 
-   void set_tests_count(const unsigned int&);
-   void set_tests_passed_count(const unsigned int&);
-   void set_tests_failed_count(const unsigned int&);
+   void set_tests_count(const unsigned&);
+   void set_tests_passed_count(const unsigned&);
+   void set_tests_failed_count(const unsigned&);
 
    void set_numerical_differentiation_tests(const bool&);
-   void set_random_tests_number(const unsigned int&);
+   void set_random_tests_number(const unsigned&);
 
    void set_message(const std::string&);
 
@@ -80,15 +87,15 @@ protected:
 
    // Number of performed tests. 
 
-   unsigned int tests_count;
+   unsigned tests_count;
 
    // Number of tests which have passed the test case. 
  
-   unsigned int tests_passed_count;
+   unsigned tests_passed_count;
 
    // Number of tests which have failed the test case. 
 
-   unsigned int tests_failed_count;
+   unsigned tests_failed_count;
 
    // True if test using numerical differentiation are to be performed. 
 
@@ -96,7 +103,7 @@ protected:
 
    // Number of iterations in random tests loops. 
 
-   unsigned int random_tests_number;
+   unsigned random_tests_number;
 
    // String with the test case information.
 
@@ -110,7 +117,7 @@ protected:
 #endif
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the terms of the GNU Lesser General Public

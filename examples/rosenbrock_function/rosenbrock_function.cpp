@@ -1,15 +1,13 @@
 /****************************************************************************************************************/
 /*                                                                                                              */
 /*   OpenNN: Open Neural Networks Library                                                                       */
-/*   www.opennn.cimne.com                                                                                       */
+/*   www.intelnics.com/opennn                                                                                   */
 /*                                                                                                              */
 /*   R O S E N B R O C K   F U N C T I O N   C L A S S                                                          */
 /*                                                                                                              */
 /*   Roberto Lopez                                                                                              */
-/*   International Center for Numerical Methods in Engineering (CIMNE)                                          */ 
-/*   Technical University of Catalonia (UPC)                                                                    */
-/*   Barcelona, Spain                                                                                           */
-/*   E-mail: rlopez@cimne.upc.edu                                                                               */
+/*   Intelnics - The artificial intelligence company                                                            */
+/*   robertolopez@intelnics.com                                                                                 */
 /*                                                                                                              */
 /****************************************************************************************************************/
 
@@ -55,9 +53,9 @@ RosenbrockFunction::~RosenbrockFunction(void)
 
 // METHODS
 
-// double calculate_evaluation(void) const method
+// double calculate_performance(void) const method
 
-double RosenbrockFunction::calculate_evaluation(void) const
+double RosenbrockFunction::calculate_performance(void) const
 {
    const unsigned int variables_number = neural_network_pointer->count_parameters_number();
 
@@ -76,9 +74,9 @@ double RosenbrockFunction::calculate_evaluation(void) const
 }
 
 
-// double calculate_evaluation(const Vector<double>&) const method
+// double calculate_performance(const Vector<double>&) const method
 
-double RosenbrockFunction::calculate_evaluation(const Vector<double>& parameters) const
+double RosenbrockFunction::calculate_performance(const Vector<double>& parameters) const
 {
    const unsigned int parameters_number = neural_network_pointer->count_parameters_number();
    
@@ -99,7 +97,7 @@ double RosenbrockFunction::calculate_evaluation(const Vector<double>& parameters
 
 
 // OpenNN: Open Neural Networks Library.
-// Copyright (C) 2005-2012 Roberto Lopez 
+// Copyright (C) 2005-2014 Roberto Lopez 
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the s of the GNU Lesser General Public
