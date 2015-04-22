@@ -31,7 +31,6 @@
 		C97985D71AE53EFB00EA7FB2 /* tab_l.gif in Resources */ = {isa = PBXBuildFile; fileRef = C97985411AE53EFA00EA7FB2 /* tab_l.gif */; };
 		C97985D81AE53EFB00EA7FB2 /* tab_r.gif in Resources */ = {isa = PBXBuildFile; fileRef = C97985421AE53EFA00EA7FB2 /* tab_r.gif */; };
 		C97985D91AE53EFB00EA7FB2 /* tabs.css in Resources */ = {isa = PBXBuildFile; fileRef = C97985431AE53EFA00EA7FB2 /* tabs.css */; };
-		C97985DA1AE53EFB00EA7FB2 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = C97985471AE53EFA00EA7FB2 /* Makefile */; };
 		C97985DB1AE53EFB00EA7FB2 /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = C97985481AE53EFA00EA7FB2 /* readme.txt */; };
 		C97985DC1AE53EFB00EA7FB2 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C97985491AE53EFA00EA7FB2 /* tinystr.cpp */; };
 		C97985DD1AE53EFB00EA7FB2 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C979854B1AE53EFA00EA7FB2 /* tinyxml.cpp */; };
@@ -136,7 +135,6 @@
 		C97985411AE53EFA00EA7FB2 /* tab_l.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tab_l.gif; sourceTree = "<group>"; };
 		C97985421AE53EFA00EA7FB2 /* tab_r.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tab_r.gif; sourceTree = "<group>"; };
 		C97985431AE53EFA00EA7FB2 /* tabs.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = tabs.css; sourceTree = "<group>"; };
-		C97985471AE53EFA00EA7FB2 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		C97985481AE53EFA00EA7FB2 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		C97985491AE53EFA00EA7FB2 /* tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinystr.cpp; sourceTree = "<group>"; };
 		C979854A1AE53EFA00EA7FB2 /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinystr.h; sourceTree = "<group>"; };
@@ -347,7 +345,6 @@
 				C97985311AE53EFA00EA7FB2 /* changes.txt */,
 				C97985321AE53EFA00EA7FB2 /* docs */,
 				C97985441AE53EFA00EA7FB2 /* lib */,
-				C97985471AE53EFA00EA7FB2 /* Makefile */,
 				C97985481AE53EFA00EA7FB2 /* readme.txt */,
 				C97985491AE53EFA00EA7FB2 /* tinystr.cpp */,
 				C979854A1AE53EFA00EA7FB2 /* tinystr.h */,
@@ -746,7 +743,6 @@
 				C97986081AE53EFB00EA7FB2 /* sum_squared_error.cpp in Sources */,
 				C97985E11AE53EFB00EA7FB2 /* tinyxmlparser.cpp in Sources */,
 				C97986001AE53EFB00EA7FB2 /* minkowski_error.cpp in Sources */,
-				C97985DA1AE53EFB00EA7FB2 /* Makefile in Sources */,
 				C97985F91AE53EFB00EA7FB2 /* scaling_layer.cpp in Sources */,
 				C97985EF1AE53EFB00EA7FB2 /* model_selection.cpp in Sources */,
 				C97986191AE53EFB00EA7FB2 /* numerical_differentiation.cpp in Sources */,

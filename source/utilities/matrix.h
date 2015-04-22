@@ -4878,7 +4878,7 @@ std::string to_string(void) const
 
 Matrix<std::string> get_string_matrix(void) const
 {
-    Matrix<std::string> string_matrix(rows_number,1);
+    Matrix<std::string> string_matrix(rows_number,columns_number);
                                      
                                      //columns_number);
 
@@ -4891,7 +4891,7 @@ Matrix<std::string> get_string_matrix(void) const
          buffer.str("");
          buffer << (*this)[i][j];
    
-         string_matrix[i][0] = buffer.str();
+         string_matrix[i][j] = buffer.str();
       }
    }
 
